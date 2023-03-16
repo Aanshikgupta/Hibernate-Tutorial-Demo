@@ -1,6 +1,7 @@
 package com.aanshik.learn_hibernate;
 
 import com.aanshik.learn_hibernate.Entity.Address;
+import com.aanshik.learn_hibernate.Entity.Certificate;
 import com.aanshik.learn_hibernate.Entity.Student;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -23,16 +24,20 @@ public class App
 
         Student student=new Student("Aanshik","gupta.aanshik@gmail.com");
 
-        Address address=new Address();
-        address.setStreet("street 1");
-        address.setCity("Greater Noida");
-        address.setOpen(true);
-        address.setAddedDate(new Date());
-        address.setX(10);
+//        Address address=new Address();
+//        address.setStreet("street 1");
+//        address.setCity("Greater Noida");
+//        address.setOpen(true);
+//        address.setAddedDate(new Date());
+//        address.setX(10);
+//
+//        FileInputStream fis=new FileInputStream("C:\\Users\\aanshik.gupta.in\\eclipse-workspace\\learn-hibernate\\src\\main\\resources\\dog.png");
+//        byte[] data=new byte[fis.available()];
+//        address.setImage(data);
 
-        FileInputStream fis=new FileInputStream("C:\\Users\\aanshik.gupta.in\\eclipse-workspace\\learn-hibernate\\src\\main\\resources\\dog.png");
-        byte[] data=new byte[fis.available()];
-        address.setImage(data);
+
+        Certificate certificate=new Certificate("Java",10);
+        student.setCertificate(certificate);
 
 
         Session session=sessionFactory.openSession();
@@ -42,7 +47,7 @@ public class App
 
         //save object
         session.save(student);
-        session.save(address);
+//        session.save(address);
 
         //commit transaction - to commit changes
         session.getTransaction().commit();

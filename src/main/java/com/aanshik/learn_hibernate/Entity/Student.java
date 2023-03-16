@@ -17,6 +17,8 @@ public class Student {
 
     private String email;
 
+    private Certificate certificate;
+
     public Student() {
     }
 
@@ -29,6 +31,14 @@ public class Student {
     public Student(String name, String email) {
         this.name = name;
         this.email = email;
+    }
+
+    public Certificate getCertificate() {
+        return certificate;
+    }
+
+    public void setCertificate(Certificate certificate) {
+        this.certificate = certificate;
     }
 
     public int getId() {
